@@ -1,0 +1,31 @@
+<% was_validated = coffee_type.errors.any? %>
+
+<%= form_with(model: coffee_type, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for coffee_type start -->
+  <div class="form-group">
+    <% coffee_type_class = "form-control" %>
+    <% coffee_type_was_invalid = coffee_type.errors.include?(:coffee_type) %>
+
+    <% if was_validated %>
+      <% if coffee_type_was_invalid %>
+        <% coffee_type_class << " is-invalid" %>
+      <% else %>
+        <% coffee_type_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :coffee_type %>
+    <!-- Input for coffee_type start -->
+    <%= f.text_field :coffee_type, class: coffee_type_class, placeholder: "Enter coffee type" %>
+    <!-- Input for coffee_type end -->
+    <% if coffee_type_was_invalid %>
+      <% coffee_type.errors.full_messages_for(:coffee_type).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for coffee_type end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>
