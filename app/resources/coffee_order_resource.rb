@@ -13,6 +13,8 @@ class CoffeeOrderResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :dairy_type
+
   belongs_to :coffe_type,
              resource: CoffeeTypeResource
 
