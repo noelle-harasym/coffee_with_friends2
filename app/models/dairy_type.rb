@@ -1,6 +1,9 @@
 class DairyType < ApplicationRecord
   # Direct associations
 
+  has_many   :coffee_orders,
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations

@@ -4,6 +4,8 @@ RSpec.describe DairyType, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:coffee_orders) }
+
     end
 
     describe "InDirect Associations" do

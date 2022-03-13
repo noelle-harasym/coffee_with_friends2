@@ -1,6 +1,8 @@
 class CoffeeOrder < ApplicationRecord
   # Direct associations
 
+  belongs_to :dairy_type
+
   belongs_to :coffe_type,
              :class_name => "CoffeeType"
 
