@@ -4,6 +4,8 @@ RSpec.describe CoffeeOrder, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:coffe_type) }
+
     it { should belong_to(:user) }
 
     end
