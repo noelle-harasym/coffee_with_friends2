@@ -16,7 +16,7 @@
 
     <%= f.label :coffe_type_id %>
     <!-- Input for coffe_type_id start -->
-    <%= f.number_field :coffe_type_id, class: coffe_type_class, placeholder: "Enter coffe type" %>
+    <%= f.collection_select :coffe_type_id, CoffeeType.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for coffe_type_id end -->
     <% if coffe_type_was_invalid %>
       <% coffee_order.errors.full_messages_for(:coffe_type).each do |message| %>

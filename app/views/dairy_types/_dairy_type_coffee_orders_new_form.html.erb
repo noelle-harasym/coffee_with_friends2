@@ -7,7 +7,7 @@
     <%= f.label :coffe_type_id %>
 
     <!-- Input for coffe_type_id start -->
-    <%= f.text_field :coffe_type_id, class: "form-control" %>
+    <%= f.collection_select :coffe_type_id, CoffeeType.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for coffe_type_id end -->
   </div>
   <!-- Label and input for coffe_type_id end -->
