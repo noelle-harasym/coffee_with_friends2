@@ -42,5 +42,10 @@
 
   <%= f.hidden_field :user_id, value: @user.id %>
 
+  <div class="form-group">
+    <%= f.label :cafe %>
+    <%= f.text_area :cafe, rows: "3", class: "form-control" %>
+  </div>
+
   <%= f.submit "Create coffee order", class: "btn btn-block btn-outline-secondary" %>
 <% end %>

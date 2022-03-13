@@ -9,6 +9,7 @@ class CreateCoffeeOrders < ActiveRecord::Migration[6.0]
       t.string :picture
       t.date :date
       t.integer :user_id
+      t.text :cafe
 
       t.timestamps
     end

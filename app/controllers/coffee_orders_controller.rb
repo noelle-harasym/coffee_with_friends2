@@ -57,6 +57,6 @@ class CoffeeOrdersController < ApplicationController
 
   def coffee_order_params
     params.require(:coffee_order).permit(:coffe_type_id, :dairy_type_id,
-                                         :iced, :modifications_other, :rating, :picture, :date, :user_id)
+                                         :iced, :modifications_other, :rating, :picture, :date, :user_id, :cafe)
   end
 end

@@ -178,5 +178,27 @@
       <% end %>
     <% end %>
   </div>
+  <div class="form-group">
+    <% cafe_class = "form-control" %>
+    <% cafe_was_invalid = coffee_order.errors.include?(:cafe) %>
+
+    <% if was_validated %>
+      <% if cafe_was_invalid %>
+        <% cafe_class << " is-invalid" %>
+      <% else %>
+        <% cafe_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :cafe %>
+    <%= f.text_area :cafe, class: cafe_class, placeholder: "Enter cafe" %>
+    <% if cafe_was_invalid %>
+      <% coffee_order.errors.full_messages_for(:cafe).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>
