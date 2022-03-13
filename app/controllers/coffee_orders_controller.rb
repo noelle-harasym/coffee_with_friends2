@@ -3,7 +3,8 @@ class CoffeeOrdersController < ApplicationController
 
   # GET /coffee_orders
   def index
-    @coffee_orders = CoffeeOrder.page(params[:page]).per(10)
+    @q = CoffeeOrder.ransack(params[:q])
+    @coffee_orders = @q.result(:distinct => true).includes(:user, :coffe_type, :dairy_type).page(params[:page]).per(10)
   end
 
   # GET /coffee_orders/1
