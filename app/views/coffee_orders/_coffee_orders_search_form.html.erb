@@ -2,6 +2,11 @@
   <p class="lead">Narrow results:</p>
 
   <div class="form-group">
+    <%= f.label :cafe_cont, "Cafe contains" %>
+    <%= f.text_field :cafe_cont, :class => "form-control", :placeholder => "Cafe contains" %>
+  </div>
+
+  <div class="form-group">
     <%= f.label :date, "Date" %>
     <div class="row">
       <div class='col-md-6 mb-1'>

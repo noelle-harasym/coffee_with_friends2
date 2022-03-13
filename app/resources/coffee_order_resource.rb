@@ -10,6 +10,7 @@ class CoffeeOrderResource < ApplicationResource
   attribute :picture, :string
   attribute :date, :date
   attribute :user_id, :integer
+  attribute :cafe, :string
 
   # Direct associations
 
