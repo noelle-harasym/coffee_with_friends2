@@ -6,6 +6,9 @@ class CoffeeTypeResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :coffee_orders,
+             foreign_key: :coffe_type_id
+
   # Indirect associations
 
 end
