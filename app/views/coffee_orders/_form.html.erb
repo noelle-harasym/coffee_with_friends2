@@ -42,7 +42,7 @@
 
     <%= f.label :dairy_type_id %>
     <!-- Input for dairy_type_id start -->
-    <%= f.number_field :dairy_type_id, class: dairy_type_class, placeholder: "Enter dairy type" %>
+    <%= f.collection_select :dairy_type_id, DairyType.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for dairy_type_id end -->
     <% if dairy_type_was_invalid %>
       <% coffee_order.errors.full_messages_for(:dairy_type).each do |message| %>

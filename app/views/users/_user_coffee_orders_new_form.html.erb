@@ -17,7 +17,7 @@
     <%= f.label :dairy_type_id %>
 
     <!-- Input for dairy_type_id start -->
-    <%= f.text_field :dairy_type_id, class: "form-control" %>
+    <%= f.collection_select :dairy_type_id, DairyType.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for dairy_type_id end -->
   </div>
   <!-- Label and input for dairy_type_id end -->
