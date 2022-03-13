@@ -10,5 +10,4 @@ class CoffeeTypeResource < ApplicationResource
              foreign_key: :coffe_type_id
 
   # Indirect associations
-
 end

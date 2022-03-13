@@ -2,7 +2,7 @@ class DairyType < ApplicationRecord
   # Direct associations
 
   has_many   :coffee_orders,
-             :dependent => :destroy
+             dependent: :destroy
 
   # Indirect associations
 
@@ -13,5 +13,4 @@ class DairyType < ApplicationRecord
   def to_s
     dairy_type
   end
-
 end

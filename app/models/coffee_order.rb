@@ -6,7 +6,7 @@ class CoffeeOrder < ApplicationRecord
   belongs_to :dairy_type
 
   belongs_to :coffe_type,
-             :class_name => "CoffeeType"
+             class_name: "CoffeeType"
 
   belongs_to :user
 
@@ -14,12 +14,11 @@ class CoffeeOrder < ApplicationRecord
 
   # Validations
 
-  validates :rating, :numericality => { :less_than_or_equal_to => 5 }
+  validates :rating, numericality: { less_than_or_equal_to: 5 }
 
   # Scopes
 
   def to_s
     coffe_type.to_s
   end
-
 end

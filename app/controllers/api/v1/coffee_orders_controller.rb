@@ -13,7 +13,7 @@ class Api::V1::CoffeeOrdersController < Api::V1::GraphitiController
     coffee_order = CoffeeOrderResource.build(params)
 
     if coffee_order.save
-      render jsonapi: coffee_order, status: 201
+      render jsonapi: coffee_order, status: :created
     else
       render jsonapi_errors: coffee_order
     end
@@ -33,7 +33,7 @@ class Api::V1::CoffeeOrdersController < Api::V1::GraphitiController
     coffee_order = CoffeeOrderResource.find(params)
 
     if coffee_order.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: coffee_order
     end

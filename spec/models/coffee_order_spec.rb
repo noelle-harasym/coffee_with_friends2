@@ -1,24 +1,18 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe CoffeeOrder, type: :model do
-  
-    describe "Direct Associations" do
-
+  describe "Direct Associations" do
     it { should belong_to(:dairy_type) }
 
     it { should belong_to(:coffe_type) }
 
     it { should belong_to(:user) }
+  end
 
-    end
+  describe "InDirect Associations" do
+  end
 
-    describe "InDirect Associations" do
-
-    end
-
-    describe "Validations" do
-
+  describe "Validations" do
     it { should validate_numericality_of(:rating).is_less_than(5) }
-
-    end
+  end
 end

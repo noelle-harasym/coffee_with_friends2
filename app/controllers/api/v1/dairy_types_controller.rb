@@ -13,7 +13,7 @@ class Api::V1::DairyTypesController < Api::V1::GraphitiController
     dairy_type = DairyTypeResource.build(params)
 
     if dairy_type.save
-      render jsonapi: dairy_type, status: 201
+      render jsonapi: dairy_type, status: :created
     else
       render jsonapi_errors: dairy_type
     end
@@ -33,7 +33,7 @@ class Api::V1::DairyTypesController < Api::V1::GraphitiController
     dairy_type = DairyTypeResource.find(params)
 
     if dairy_type.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: dairy_type
     end
