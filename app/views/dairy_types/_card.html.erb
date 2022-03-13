@@ -6,9 +6,7 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Dairy type</dt>
-      <!-- Display dairy_type start -->
       <dd><%= dairy_type.dairy_type %></dd>
-      <!-- Display dairy_type end -->
 
     </dl>
 
@@ -17,21 +15,17 @@
         <%= link_to_show_or_back dairy_type, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link dairy_type start -->
       <div class="col">
         <%= link_to edit_dairy_type_url(dairy_type), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link dairy_type end -->
 
-      <!-- Delete link dairy_type start -->
       <div class="col">
         <%= link_to dairy_type, method: :delete, data: { confirm: "Do you really want to delete this dairy_type?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link dairy_type end -->
     </div>
   </div>
 

@@ -10,24 +10,18 @@
   <ul class="list-group list-group-flush">
     <% @coffee_type.coffee_orders.each do |coffee_order| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <%= link_to coffee_order, coffee_order %>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%= link_to coffee_order, method: :delete, data: { confirm: "Do you really want to delete this coffee_order" } do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="coffee_type_coffee_orders_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "coffee_types/coffee_type_coffee_orders_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

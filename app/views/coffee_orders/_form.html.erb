@@ -1,7 +1,6 @@
 <% was_validated = coffee_order.errors.any? %>
 
 <%= form_with(model: coffee_order, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for coffe_type_id start -->
   <div class="form-group">
     <% coffe_type_class = "form-control" %>
     <% coffe_type_was_invalid = coffee_order.errors.include?(:coffe_type) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :coffe_type_id %>
-    <!-- Input for coffe_type_id start -->
     <%= f.collection_select :coffe_type_id, CoffeeType.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for coffe_type_id end -->
     <% if coffe_type_was_invalid %>
       <% coffee_order.errors.full_messages_for(:coffe_type).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for coffe_type_id end -->
-  <!-- Label and input for dairy_type_id start -->
   <div class="form-group">
     <% dairy_type_class = "form-control" %>
     <% dairy_type_was_invalid = coffee_order.errors.include?(:dairy_type) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :dairy_type_id %>
-    <!-- Input for dairy_type_id start -->
     <%= f.collection_select :dairy_type_id, DairyType.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for dairy_type_id end -->
     <% if dairy_type_was_invalid %>
       <% coffee_order.errors.full_messages_for(:dairy_type).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,8 +45,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for dairy_type_id end -->
-  <!-- Label and input for iced start -->
   <div class="form-check">
     <% iced_class = "form-check-input" %>
     <% iced_was_invalid = coffee_order.errors.include?(:iced) %>
@@ -77,8 +68,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for iced end -->
-  <!-- Label and input for modifications_other start -->
   <div class="form-group">
     <% modifications_other_class = "form-control" %>
     <% modifications_other_was_invalid = coffee_order.errors.include?(:modifications_other) %>
@@ -92,9 +81,7 @@
     <% end %>
 
     <%= f.label :modifications_other %>
-    <!-- Input for modifications_other start -->
     <%= f.text_area :modifications_other, class: modifications_other_class, placeholder: "Enter modifications other" %>
-    <!-- Input for modifications_other end -->
     <% if modifications_other_was_invalid %>
       <% coffee_order.errors.full_messages_for(:modifications_other).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -103,8 +90,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for modifications_other end -->
-  <!-- Label and input for rating start -->
   <div class="form-group">
     <% rating_class = "form-control" %>
     <% rating_was_invalid = coffee_order.errors.include?(:rating) %>
@@ -118,9 +103,7 @@
     <% end %>
 
     <%= f.label :rating %>
-    <!-- Input for rating start -->
     <%= f.number_field :rating, class: rating_class, placeholder: "Enter rating" %>
-    <!-- Input for rating end -->
     <% if rating_was_invalid %>
       <% coffee_order.errors.full_messages_for(:rating).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -129,8 +112,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for rating end -->
-  <!-- Label and input for picture start -->
   <div class="form-group">
     <% picture_class = "form-control" %>
     <% picture_was_invalid = coffee_order.errors.include?(:picture) %>
@@ -144,9 +125,7 @@
     <% end %>
 
     <%= f.label :picture %>
-    <!-- Input for picture start -->
     <%= f.file_field :picture, class: "form-control" %>
-    <!-- Input for picture end -->
     <% if picture_was_invalid %>
       <% coffee_order.errors.full_messages_for(:picture).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -155,8 +134,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for picture end -->
-  <!-- Label and input for date start -->
   <div class="form-group">
     <% date_class = "form-control" %>
     <% date_was_invalid = coffee_order.errors.include?(:date) %>
@@ -170,9 +147,7 @@
     <% end %>
 
     <%= f.label :date %>
-    <!-- Input for date start -->
     <%= f.date_select :date, class: date_class, placeholder: "Enter date" %>
-    <!-- Input for date end -->
     <% if date_was_invalid %>
       <% coffee_order.errors.full_messages_for(:date).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -181,8 +156,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for date end -->
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <% user_class = "form-control" %>
     <% user_was_invalid = coffee_order.errors.include?(:user) %>
@@ -196,9 +169,7 @@
     <% end %>
 
     <%= f.label :user_id %>
-    <!-- Input for user_id start -->
     <%= f.collection_select :user_id, User.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for user_id end -->
     <% if user_was_invalid %>
       <% coffee_order.errors.full_messages_for(:user).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -207,6 +178,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for user_id end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

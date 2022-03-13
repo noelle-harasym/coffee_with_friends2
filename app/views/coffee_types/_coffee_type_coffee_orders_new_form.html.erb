@@ -1,80 +1,46 @@
-<!-- Form coffee_order start -->
 <%= form_with(model: @coffee_order, local: true) do |f| %>
-<!-- Form coffee_order end -->
 
-  <!-- Label and input for coffe_type_id start -->
-  <!-- Input for coffe_type_id start -->
   <%= f.hidden_field :coffe_type_id, value: @coffee_type.id %>
-  <!-- Input for coffe_type_id end -->
-  <!-- Label and input for coffe_type_id end -->
 
-  <!-- Label and input for dairy_type_id start -->
   <div class="form-group">
     <%= f.label :dairy_type_id %>
 
-    <!-- Input for dairy_type_id start -->
     <%= f.collection_select :dairy_type_id, DairyType.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for dairy_type_id end -->
   </div>
-  <!-- Label and input for dairy_type_id end -->
 
-  <!-- Label and input for iced start -->
   <div class="form-check">
-    <!-- Input for iced start -->
     <%= f.check_box :iced, class: "form-check-input" %>
-    <!-- Input for iced end -->
     <%= f.label :iced, class: "form-check-label" %>
   </div>
-  <!-- Label and input for iced end -->
 
-  <!-- Label and input for modifications_other start -->
   <div class="form-group">
     <%= f.label :modifications_other %>
-    <!-- Input for modifications_other start -->
     <%= f.text_area :modifications_other, rows: "3", class: "form-control" %>
-    <!-- Input for modifications_other end -->
   </div>
-  <!-- Label and input for modifications_other end -->
 
-  <!-- Label and input for rating start -->
   <div class="form-group">
     <%= f.label :rating %>
 
-    <!-- Input for rating start -->
     <%= f.text_field :rating, class: "form-control" %>
-    <!-- Input for rating end -->
   </div>
-  <!-- Label and input for rating end -->
 
-  <!-- Label and input for picture start -->
   <div class="form-group">
     <%= f.label :picture %>
 
-    <!-- Input for picture start -->
     <%= f.file_field :picture, class: "form-control" %>
-    <!-- Input for picture end -->
   </div>
-  <!-- Label and input for picture end -->
 
-  <!-- Label and input for date start -->
   <div class="form-group">
     <%= f.label :date %>
 
-    <!-- Input for date start -->
     <%= f.date_select :date, class: "form-control" %>
-    <!-- Input for date end -->
   </div>
-  <!-- Label and input for date end -->
 
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <%= f.label :user_id %>
 
-    <!-- Input for user_id start -->
     <%= f.collection_select :user_id, User.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for user_id end -->
   </div>
-  <!-- Label and input for user_id end -->
 
   <%= f.submit "Create coffee order", class: "btn btn-block btn-outline-secondary" %>
 <% end %>

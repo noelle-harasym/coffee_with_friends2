@@ -1,7 +1,6 @@
 <% was_validated = dairy_type.errors.any? %>
 
 <%= form_with(model: dairy_type, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for dairy_type start -->
   <div class="form-group">
     <% dairy_type_class = "form-control" %>
     <% dairy_type_was_invalid = dairy_type.errors.include?(:dairy_type) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :dairy_type %>
-    <!-- Input for dairy_type start -->
     <%= f.text_field :dairy_type, class: dairy_type_class, placeholder: "Enter dairy type" %>
-    <!-- Input for dairy_type end -->
     <% if dairy_type_was_invalid %>
       <% dairy_type.errors.full_messages_for(:dairy_type).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,6 +23,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for dairy_type end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

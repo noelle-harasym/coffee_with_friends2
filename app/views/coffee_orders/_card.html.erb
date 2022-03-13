@@ -6,58 +6,42 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Coffe type</dt>
-      <!-- Display coffe_type_id start -->
       <dd>
         <% if @coffee_order.coffe_type.present? %>
           <%= link_to coffee_order.coffe_type, coffee_order.coffe_type %>
         <% end %>
       </dd>
-      <!-- Display coffe_type_id end -->
 
       <dt>Dairy type</dt>
-      <!-- Display dairy_type_id start -->
       <dd>
         <% if @coffee_order.dairy_type.present? %>
           <%= link_to coffee_order.dairy_type, coffee_order.dairy_type %>
         <% end %>
       </dd>
-      <!-- Display dairy_type_id end -->
 
       <dt>Iced</dt>
-      <!-- Display iced start -->
       <dd><%= coffee_order.iced %></dd>
-      <!-- Display iced end -->
 
       <dt>Modifications other</dt>
-      <!-- Display modifications_other start -->
       <dd><%= coffee_order.modifications_other %></dd>
-      <!-- Display modifications_other end -->
 
       <dt>Rating</dt>
-      <!-- Display rating start -->
       <dd><%= coffee_order.rating %></dd>
-      <!-- Display rating end -->
 
       <dt>Picture</dt>
-      <!-- Display picture start -->
       <dd>
         <%= cl_image_tag @coffee_order.picture, class: "img-fluid" %>
       </dd>
-      <!-- Display picture end -->
 
       <dt>Date</dt>
-      <!-- Display date start -->
       <dd><%= coffee_order.date %></dd>
-      <!-- Display date end -->
 
       <dt>User</dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @coffee_order.user.present? %>
           <%= link_to coffee_order.user, coffee_order.user %>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
     </dl>
 
@@ -66,21 +50,17 @@
         <%= link_to_show_or_back coffee_order, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link coffee_order start -->
       <div class="col">
         <%= link_to edit_coffee_order_url(coffee_order), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link coffee_order end -->
 
-      <!-- Delete link coffee_order start -->
       <div class="col">
         <%= link_to coffee_order, method: :delete, data: { confirm: "Do you really want to delete this coffee_order?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link coffee_order end -->
     </div>
   </div>
 
