@@ -12,5 +12,7 @@ RSpec.describe CoffeeOrder, type: :model do
 
     describe "Validations" do
 
+    it { should validate_numericality_of(:rating).is_less_than(5) }
+
     end
 end
