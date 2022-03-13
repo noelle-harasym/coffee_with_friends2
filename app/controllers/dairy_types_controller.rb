@@ -3,7 +3,7 @@ class DairyTypesController < ApplicationController
 
   # GET /dairy_types
   def index
-    @dairy_types = DairyType.all
+    @dairy_types = DairyType.page(params[:page]).per(10)
   end
 
   # GET /dairy_types/1
