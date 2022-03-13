@@ -8,6 +8,7 @@ class DairyTypesController < ApplicationController
 
   # GET /dairy_types/1
   def show
+    @coffee_order = CoffeeOrder.new
   end
 
   # GET /dairy_types/new

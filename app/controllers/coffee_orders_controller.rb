@@ -24,7 +24,12 @@ class CoffeeOrdersController < ApplicationController
     @coffee_order = CoffeeOrder.new(coffee_order_params)
 
     if @coffee_order.save
-      redirect_to @coffee_order, notice: 'Coffee order was successfully created.'
+      message = 'CoffeeOrder was successfully created.'
+      if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+        redirect_back fallback_location: request.referrer, notice: message
+      else
+        redirect_to @coffee_order, notice: message
+      end
     else
       render :new
     end
