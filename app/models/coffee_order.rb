@@ -1,4 +1,6 @@
 class CoffeeOrder < ApplicationRecord
+  mount_base64_uploader :picture, PictureUploader
+
   # Direct associations
 
   belongs_to :dairy_type

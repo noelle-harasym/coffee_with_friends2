@@ -32,7 +32,9 @@
 
       <dt>Picture</dt>
       <!-- Display picture start -->
-      <dd><%= coffee_order.picture %></dd>
+      <dd>
+        <%= cl_image_tag @coffee_order.picture, class: "img-fluid" %>
+      </dd>
       <!-- Display picture end -->
 
       <dt>Date</dt>
