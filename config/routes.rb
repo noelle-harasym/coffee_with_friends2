@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   root :to => "users#index"
   resources :dairy_types
   resources :coffee_types
